@@ -10,14 +10,15 @@ import { Input } from "@/components/ui/input";
 import { useSidebar } from "@/components/ui/sidebar";
 
 import { Logo } from "./logo";
+import { cn } from "@/lib/utils";
 
-export function BrandHeader() {
+export function BrandHeader({ className }: { className?: string }) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const { state, toggleSidebar } = useSidebar();
   const isCollapsed = state === "collapsed";
 
   return (
-    <header className="fixed z-50 w-full bg-sidebar">
+    <header className={cn("fixed z-50 w-full bg-sidebar", className)}>
       <div className="flex h-9 items-center justify-between px-2">
         <div className="flex items-center space-x-4">
           <Button

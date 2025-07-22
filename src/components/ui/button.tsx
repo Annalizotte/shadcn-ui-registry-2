@@ -22,11 +22,14 @@ const buttonVariants = cva(
           "text-primary underline-offset-4 hover:underline hover:text-[oklch(0.52_0.10_258.5)] dark:hover:text-[oklch(0.62_0.22_260.60)]",
       },
       size: {
-        default:"h-6 px-2 py-1 has-[>svg:first-child]:pl-1.5 has-[>svg:last-child]:pr-1.5",
-        sm: "h-5 rounded-md gap-1.5 px-2 text-sm",
-        lg: "h-7 rounded-md px-3 text-lg",
+        default:
+          "h-6 px-2 py-1 gap-1 text-base rounded-[var(--radius-md)] has-[>svg:first-child]:pl-1.5 has-[>svg:last-child]:pr-1.5",
+        sm:
+          "h-5 px-2 py-1 gap-1 text-sm rounded-[var(--radius-md)] has-[>svg:first-child]:pl-1.5 has-[>svg:last-child]:pr-1.5",
+        lg:
+          "h-7 px-3 py-1.5 gap-1.5 text-lg rounded-[var(--radius-md)] has-[>svg:first-child]:pl-2 has-[>svg:last-child]:pr-2",
         icon: "size-9",
-      },
+      },  
     },
     defaultVariants: {
       variant: "default",

@@ -40,16 +40,21 @@ export default function ShellLayout({
         "bg-background text-foreground",
       )}
     >
-      <body>
-        <SidebarProvider>
-          <BrandHeader />
-          <BrandSidebar />
-          <main className="mt-16 flex w-full justify-center">
-            <div className="container">{children}</div>
-          </main>
-          <Toaster />
-        </SidebarProvider>
-      </body>
-    </html>
+    <body>
+    <SidebarProvider>
+      <BrandHeader className="fixed left-0 top-0 z-50 w-full h-9" />
+
+      <div className="flex pt-9 h-screen">
+        <BrandSidebar />
+        <main className="flex-1 overflow-auto p-4">
+          {children}
+        </main>
+      </div>
+
+      <Toaster />
+    </SidebarProvider>
+  </body>
+</html>
+
   );
 }
