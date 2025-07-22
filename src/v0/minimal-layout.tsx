@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Montserrat } from "next/font/google";
+import { Roboto, Roboto_Mono, Roboto_Serif } from "next/font/google";
 import React, { type ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
@@ -6,17 +6,17 @@ import { cn } from "@/lib/utils";
 import "@/app/tokens.css";
 import "@/app/globals.css";
 
-const GeistSans = Geist({
+const RobotoSans = Roboto({
   subsets: ["latin"],
   variable: "--font-sans",
 });
 
-const GeistMono = Geist_Mono({
+const RobotoMono = Roboto_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
 });
 
-const MontserratSerif = Montserrat({
+const RobotoSerif = Roboto_Serif({
   subsets: ["latin"],
   variable: "--font-serif",
 });
@@ -30,9 +30,9 @@ export default function RootLayout({
     <html
       lang="en"
       className={cn(
-        GeistSans.variable,
-        GeistMono.variable,
-        MontserratSerif.variable,
+        RobotoSans.variable,
+        RobotoMono.variable,
+        RobotoSerif.variable,
         "bg-background text-foreground",
       )}
     >

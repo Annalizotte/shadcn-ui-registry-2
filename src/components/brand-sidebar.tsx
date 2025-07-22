@@ -28,7 +28,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarSeparator,
-  useSidebar,
 } from "@/components/ui/sidebar";
 import { cn } from "@/lib/utils";
 
@@ -53,8 +52,6 @@ export function BrandSidebar({
   className,
 }: SidebarProps) {
   const pathname = usePathname();
-  const { state } = useSidebar();
-  const isCollapsed = state === "collapsed";
 
   const mainNavItems: NavItem[] = [
     {
@@ -114,7 +111,7 @@ export function BrandSidebar({
   ];
 
   return (
-    <Sidebar variant="sidebar" collapsible="icon" className="mt-9"> 
+    <Sidebar variant="sidebar" collapsible="icon" className={cn("mt-9", className)}> 
       <SidebarContent>
         {/* Main Nav Items */}
         <SidebarGroup>

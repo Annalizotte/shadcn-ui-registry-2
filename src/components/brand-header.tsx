@@ -7,15 +7,17 @@ import { useState } from "react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useSidebar } from "@/components/ui/sidebar";
-
 import { Logo } from "./logo";
 import { cn } from "@/lib/utils";
 
-export function BrandHeader({ className }: { className?: string }) {
+export function BrandHeader({
+  className,
+  onToggleSidebar,
+}: {
+  className?: string;
+  onToggleSidebar?: () => void;
+}) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const { state, toggleSidebar } = useSidebar();
-  const isCollapsed = state === "collapsed";
 
   return (
     <header className={cn("fixed z-50 w-full bg-sidebar", className)}>
@@ -25,13 +27,9 @@ export function BrandHeader({ className }: { className?: string }) {
             variant="ghost"
             size="icon"
             className="size-6"
-            onClick={toggleSidebar}
+            onClick={onToggleSidebar}
           >
-            {isCollapsed ? (
-              <Menu className="size-5" />
-            ) : (
-              <X className="size-5" />
-            )}
+            <Menu className="size-5" />
           </Button>
 
           <Link href="/" className="flex items-center">
@@ -44,7 +42,7 @@ export function BrandHeader({ className }: { className?: string }) {
             <Search className="size-5" />
           </Button>
           <Button variant="ghost" size="icon" className="size-6">
-            <HelpCircle className="size-5"/>
+            <HelpCircle className="size-5" />
           </Button>
           <Button variant="ghost" size="icon" className="size-6">
             <X className="size-5" />
