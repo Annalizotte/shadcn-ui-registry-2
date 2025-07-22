@@ -12,11 +12,13 @@ export default function ShellLayout({
 }>) {
   return (
     <SidebarProvider>
-      <BrandHeader />
-      <BrandSidebar />
-      <main className="flex w-full justify-center">
-        <div className="container">{children}</div>
-      </main>
+      <BrandHeader className="fixed left-0 top-0 z-50 w-full h-9" />
+      <div className="flex pt-9 h-screen">
+        <BrandSidebar className="w-48 shrink-0" />
+        <main className="flex-1 overflow-auto p-4">
+          {children}
+        </main>
+      </div>
       <Toaster />
     </SidebarProvider>
   );
